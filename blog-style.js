@@ -1,7 +1,6 @@
-// ========== MARKA SAATÇİLİK BLOG – TİCIMAX UYUMLU DÜZEN ==========
+// ========== MARKA SAATÇİLİK BLOG SAYFASI - TİCIMAX (email-list yapısına göre) ==========
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Sadece blog sayfasında çalışsın
+document.addEventListener("DOMContentLoaded", function() {
   if (window.location.pathname.includes("/blog")) {
     document.body.classList.add("blog-page");
 
@@ -10,15 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
     header.classList.add("blog-header");
     header.innerHTML = `
       <h1>Blog Yazılarımız</h1>
-      <p>Marka Saatçilik Blog – Saat dünyasından ilham verici içerikler, trendler ve yenilikler</p>
+      <p>Marka Saatçilik Blog – Saat dünyasından ilham veren yazılar, trendler ve ipuçları</p>
     `;
-    const main = document.querySelector(".page-content, main, .icerikAlan");
+    const main = document.querySelector(".page-content, main, .ticContainer, #formGlobal");
     if (main) main.prepend(header);
 
-    // Yazı listesi kapsayıcısı
-    const list = document.querySelector(".blogList, .blog-list, .blogicerik, .blog-items");
+    // Blog liste kapsayıcısı (#email-list)
+    const list = document.querySelector("#email-list");
     if (list) {
-      const items = list.querySelectorAll(".blogListItem, article, li");
+      const items = list.querySelectorAll("li");
       if (items.length > 0) {
         const container = document.createElement("div");
         container.classList.add("blog-container");
@@ -34,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             card.appendChild(clonedImg);
           }
 
-          // İçerik kısmı
+          // İçerik
           const content = document.createElement("div");
           content.classList.add("blog-content");
 
@@ -65,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
           container.appendChild(card);
         });
 
-        // Orijinal listeyi temizle ve yeni düzeni ekle
+        // Orijinal listeyi temizle ve yeni görünümü ekle
         list.innerHTML = "";
         list.appendChild(container);
       }
