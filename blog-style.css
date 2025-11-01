@@ -1,82 +1,84 @@
-/* ========== MARKA SAATÇİLİK BLOG TASARIMI (Premium Versiyon) ========== */
+/* ========== MARKA SAATÇİLİK BLOG TASARIMI – Saat & Saat Tarzı ========== */
 
 /* Fontlar */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600&display=swap');
 
 body.blog-page {
-  background-color: #f9f9f9;
-  font-family: "Inter", sans-serif;
-  color: #222;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  color: #222222;
 }
 
-/* Blog başlık alanı */
+/* Başlık alanı */
 .blog-header {
   max-width: 1200px;
-  margin: 50px auto 20px;
-  text-align: center;
+  margin: 60px auto 40px;
   padding: 0 20px;
+  text-align: center;
 }
 
 .blog-header h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
   font-weight: 600;
-  color: #000;
-  letter-spacing: 0.5px;
+  color: #000000;
+  margin: 0;
+  letter-spacing: 0.2px;
 }
 
 .blog-header p {
-  color: #666;
-  font-size: 15px;
-  margin-top: 8px;
-  line-height: 1.6;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.5;
 }
 
-/* Blog listeleme alanı */
+/* Listeleme alanı */
 .blog-container {
   max-width: 1200px;
-  margin: 30px auto 80px;
+  margin: 0 auto 80px;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   gap: 32px;
 }
 
-/* Kartlar */
+/* Kart stili */
 .blog-card {
-  background: #fff;
-  border-radius: 14px;
+  background: #ffffff;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
 }
 
 .blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
-/* Görseller */
+/* Görsel */
 .blog-card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-bottom: 1px solid #eee;
+  display: block;
+  border-bottom: 1px solid #eeeeee;
 }
 
-/* İçerik */
+/* İçerik alanı */
 .blog-content {
-  padding: 20px 22px 28px;
+  padding: 22px 24px 28px;
 }
 
 .blog-content h2 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
   font-weight: 600;
-  font-size: 18px;
-  color: #000;
-  margin-bottom: 10px;
-  line-height: 1.4;
-  transition: color 0.2s ease;
+  color: #000000;
+  margin: 0 0 12px;
+  line-height: 1.3;
+  transition: color 0.25s ease;
 }
 
 .blog-content h2:hover {
@@ -85,25 +87,24 @@ body.blog-page {
 
 .blog-content p {
   font-size: 15px;
-  line-height: 1.7;
-  color: #555;
-  margin-bottom: 15px;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 18px;
 }
 
-/* Tarih */
+/* Tarih ve “Devamını oku” link */
 .blog-date {
   font-size: 13px;
-  color: #999;
-  margin-top: 6px;
+  color: #999999;
+  margin-top: 4px;
 }
 
-/* “Devamını Oku” linki */
 .blog-readmore {
   display: inline-block;
-  margin-top: 10px;
-  color: #ed3236;
-  font-weight: 500;
+  margin-top: 12px;
   font-size: 14px;
+  font-weight: 500;
+  color: #ed3236;
   text-decoration: none;
 }
 
@@ -111,18 +112,18 @@ body.blog-page {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* Responsive ayarlar */
 @media (max-width: 768px) {
   .blog-header h1 {
-    font-size: 22px;
+    font-size: 26px;
   }
   .blog-container {
-    gap: 22px;
+    gap: 24px;
   }
   .blog-card img {
     height: 180px;
   }
   .blog-content {
-    padding: 16px 18px 22px;
+    padding: 18px 20px 24px;
   }
 }
