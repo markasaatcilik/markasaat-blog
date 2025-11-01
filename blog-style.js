@@ -5,6 +5,15 @@ document.addEventListener("DOMContentLoaded", function() {
   if (window.location.pathname.includes("/blog")) {
     document.body.classList.add("blog-page");
 
+    // Sayfa üstüne başlık ekle
+    const header = document.createElement("div");
+    header.classList.add("blog-header");
+    header.innerHTML = `
+      <h1>Zamansız Saat Hikayeleri</h1>
+      <p>Marka Saatçilik Blog – Stil, teknik ve zamana dair ilham veren yazılar</p>
+    `;
+    document.body.prepend(header);
+
     // Eğer blog yazıları liste halinde geldiyse, onları kartlara dönüştür
     const posts = document.querySelectorAll(".blog-item, article, .blog-post");
     if (posts.length > 0) {
@@ -35,6 +44,16 @@ document.addEventListener("DOMContentLoaded", function() {
         const text = post.querySelector("p, .summary, .excerpt");
         if (text) {
           content.appendChild(text.cloneNode(true));
+        }
+
+        // Devamını oku bağlantısı ekle
+        const link = post.querySelector("a");
+        if (link) {
+          const readMore = document.createElement("a");
+          readMore.href = link.href;
+          readMore.textContent = "Devamını Oku →";
+          readMore.classList.add("blog-readmore");
+          content.appendChild(readMore);
         }
 
         card.appendChild(content);
