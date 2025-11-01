@@ -1,11 +1,10 @@
-// ========== MARKA SAATÇİLİK BLOG SAYFASI SCRIPTİ ==========
+// ========== MARKA SAATÇİLİK BLOG SAYFASI SCRIPTİ – Saat & Saat Uyumluluğu ==========
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Sadece blog sayfasında çalışsın
   if (window.location.pathname.includes("/blog")) {
     document.body.classList.add("blog-page");
 
-    // Sayfa üstüne başlık ekle
+    // Başlık alanını ekle
     const header = document.createElement("div");
     header.classList.add("blog-header");
     header.innerHTML = `
@@ -14,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     `;
     document.body.prepend(header);
 
-    // Eğer blog yazıları liste halinde geldiyse, onları kartlara dönüştür
+    // Yazı listelerini kartlara dönüştür
     const posts = document.querySelectorAll(".blog-item, article, .blog-post");
     if (posts.length > 0) {
       const container = document.createElement("div");
@@ -24,20 +23,18 @@ document.addEventListener("DOMContentLoaded", function() {
         const card = document.createElement("div");
         card.classList.add("blog-card");
 
-        // Görsel bul
         const img = post.querySelector("img");
         if (img) {
           card.appendChild(img.cloneNode(true));
         }
 
-        // İçerik alanı
         const content = document.createElement("div");
         content.classList.add("blog-content");
 
         const title = post.querySelector("h2, h3, .title, a");
         if (title) {
           const titleClone = title.cloneNode(true);
-          if (titleClone.tagName === "A") titleClone.setAttribute("target", "_self");
+          if (titleClone.tagName === "A") titleClone.setAttribute("target","_self");
           content.appendChild(titleClone);
         }
 
@@ -46,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function() {
           content.appendChild(text.cloneNode(true));
         }
 
-        // Devamını oku bağlantısı ekle
         const link = post.querySelector("a");
         if (link) {
           const readMore = document.createElement("a");
@@ -60,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
         container.appendChild(card);
       });
 
-      // Orijinal blog içeriğini değiştir
       const main = document.querySelector(".page-content, .blog-list, main");
       if (main) {
         main.innerHTML = "";
